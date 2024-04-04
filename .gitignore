@@ -1,0 +1,13 @@
+.idea
+.env
+sqlite_dev.db
+*.log
+__pycache__/
+tada/alembic/versions/__pycache__
+tada/alembic/__pycache__
+tada/tests/__pycache__
+tada/src/database/__pycache__
+tada/src/api/v1/__pycache__
+tada/src/api/__pycache__
+tada/src/__pycache__
+tada/__pycache__

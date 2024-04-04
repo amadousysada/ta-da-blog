@@ -1,0 +1,75 @@
+[tool.poetry]
+name = "tada"
+version = "0.1.0"
+description = ""
+authors = ["amadou sy <amsada93@gmail.com>"]
+readme = "README.md"
+packages = [{include = "tada"}]
+
+[tool.poetry.scripts]
+run-my-blog = "tada.src.main:run"
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.110.0"
+uvicorn = {extras = ["standard"], version = "^0.29.0"}
+sqlalchemy = "^2.0.29"
+alembic = "^1.13.1"
+pydantic-settings = "^2.2.1"
+asyncpg = "^0.29.0"
+aiosqlite = "^0.20.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.1.1"
+pytest-watch = "^4.2.0"
+ruff = "^0.3.4"
+httpx = "^0.27.0"
+async-factory-boy = "^1.0.1"
+pytest-asyncio = "^0.23.6"
+pytest-env = "^1.1.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".git",
+    ".pyenv",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    "venv",
+]
+
+line-length = 88
+indent-width = 4
+
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["A", "E", "F", "I", "N", "Q", "W"]
+ignore = []
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
